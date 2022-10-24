@@ -1,0 +1,37 @@
+basePath: /
+definitions:
+  user.User:
+    properties:
+      email:
+        type: string
+      first_name:
+        type: string
+      id:
+        type: integer
+      last_name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    name: FGA API Support
+  description: This is api for creating user and user order
+  title: UserOrder API
+  version: "1.0"
+paths:
+  /v1/user:
+    post:
+      consumes:
+      - application/json
+      description: insert new user
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.User'
+      summary: this api will insert user with unique email
+      tags:
+      - user
+swagger: "2.0"
